@@ -22,10 +22,10 @@ class m002_second_migration
     public function up(): string
     {
         $db_sql_product = 'INSERT INTO product (product_sku, product_name, product_price, product_type) VALUES
-        ("JVC200123", "Acme DISC", "1.00", "DVD-disc"),
-        ("JVC200123", "Acme DISC", "1.00", "DVD-disc"),
-        ("JVC200123", "Acme DISC", "1.00", "DVD-disc"),
-        ("JVC200123", "Acme DISC", "1.00", "DVD-disc"),
+        ("JVC200123", "Acme DISC", "1.00", "DVD"),
+        ("JVC200123", "Acme DISC", "1.00", "DVD"),
+        ("JVC200123", "Acme DISC", "1.00", "DVD"),
+        ("JVC200123", "Acme DISC", "1.00", "DVD"),
         ("GGWP0007", "War and Peace", "20.00", "Book"),
         ("GGWP0007", "War and Peace", "20.00", "Book"),
         ("GGWP0007", "War and Peace", "20.00", "Book"),

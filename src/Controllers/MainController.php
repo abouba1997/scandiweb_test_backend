@@ -45,7 +45,7 @@ class MainController
         $product = null;
 
         $productType = $body['productType'];
-        if ($productType === "DVD-disc") {
+        if ($productType === "DVD") {
             $product = new DvdModel();
         } else if ($productType === "Book") {
             $product = new BookModel();
@@ -66,11 +66,11 @@ class MainController
             throw $e;
         }
 
-        $product_name = explode("-", strtolower($productType));
+        $product_name = strtolower($productType);
 
         // Getting the last added product
-        $sql = "SELECT product.*," . $product_name[0] . ".* FROM product 
-        LEFT JOIN " . $product_name[0] . " ON product.product_id = ". $product_name[0]. "." . $product_name[0] . "_id_fk
+        $sql = "SELECT product.*," . $product_name . ".* FROM product 
+        LEFT JOIN " . $product_name . " ON product.product_id = ". $product_name . "." . $product_name . "_id_fk
         WHERE product.product_id=$productId";
 
         $statement = Application::getDB()->prepare($sql);

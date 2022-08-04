@@ -6,9 +6,6 @@ use Exception;
 use Sangtech\Scandiweb\Core\Application;
 use Sangtech\Scandiweb\Core\Request;
 use Sangtech\Scandiweb\Core\Response;
-use Sangtech\Scandiweb\Models\BookModel;
-use Sangtech\Scandiweb\Models\DvdModel;
-use Sangtech\Scandiweb\Models\FurnitureModel;
 use Sangtech\Scandiweb\Models\ProductModel;
 
 /**
@@ -45,13 +42,8 @@ class MainController
         $product = null;
 
         $productType = $body['productType'];
-        if ($productType === "DVD") {
-            $product = new DvdModel();
-        } else if ($productType === "Book") {
-            $product = new BookModel();
-        } else if ($productType === "Furniture") {
-            $product = new FurnitureModel();
-        }
+        $productObject = 'Sangtech\Scandiweb\Models\\'. $productType . "Model";
+        $product = new $productObject();
 
         // Begin database transaction
         Application::getDB()->beginTransaction();

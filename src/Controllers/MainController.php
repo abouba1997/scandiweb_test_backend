@@ -41,7 +41,7 @@ class MainController
         $productModel = new ProductModel();
         $product = null;
 
-        $productType = $body['productType'];
+        $productType = ucfirst(strtolower($body['productType']));
         $productObject = 'Sangtech\Scandiweb\Models\\'. $productType . "Model";
         $product = new $productObject();
 

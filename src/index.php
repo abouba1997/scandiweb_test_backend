@@ -3,10 +3,10 @@
 include_once __DIR__ . '/../vendor/autoload.php';
 
 use Sangtech\Scandiweb\Core\Application;
-// use Sangtech\Scandiweb\Config\DotEnv;
+use Sangtech\Scandiweb\Config\DotEnv;
 use Sangtech\Scandiweb\Controllers\MainController;
 
-// (new DotEnv(__DIR__ . '/.env'))->load();
+(new DotEnv(__DIR__ . '/.env'))->load();
 
 $app = new Application();
 
